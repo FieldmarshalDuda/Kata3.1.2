@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User list</title>
+</head>
+<body>
+<!--/*@thymesVar id="user" type="katapackage.spring.model.User"*/-->
+<div
+   th:each="user : ${users}">
+    <a th:href="@{/users/{id}(id=${user.getId()})}" th:text="${user.getName()+' ' + user.getLastname()}"></a>
+
+</div>
+<br>
+<hr>
+<a th:href="new">Add user</a>
+<br>
+<label> Click on user to update info</label>
+</body>
+</html>
