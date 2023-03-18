@@ -2,25 +2,25 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-  <title>Edit user</title>
+  <title>Редактирование пользователя</title>
 </head>
 <body>
 <!--/*@thymesVar id="user" type="katapackage.spring.model.User"*/-->
 <form th:method="PATCH" th:action="@{/users/{id}(id=${user.getId()})}"
       th:object="${user}">
-  <label for="name">Enter new name</label>
+  <label for="name">Введите имя</label>
   <input id="name" type="text" th:field="*{name}">
   <div style="color:palevioletred" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name error</div>
   <br>
-  <label for="lastname">Enter new lastname</label>
+  <label for="lastname">Введите фамилию</label>
   <input type="text" id="lastname" th:field="*{lastname}">
   <div style="color:palevioletred" th:if="${#fields.hasErrors('lastname')}" th:errors="*{lastname}">Lastname error</div>
   <br>
-  <label for="email"> Email</label>
-  <input id="email" type="text" th:field="*{email}"/>
-  <div style="color:palevioletred" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email error</div>
+<!--  <label for="email"> Email</label>-->
+<!--  <input id="email" type="text" th:field="*{email}"/>-->
+<!--  <div style="color:palevioletred" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email error</div>-->
   <br>
-  <input type="submit" value="Update">
+  <input type="submit" value="Обновить данные">
 </form>
 </body>
 </html>

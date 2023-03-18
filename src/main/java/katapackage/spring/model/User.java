@@ -19,8 +19,6 @@ public class User {
     @Column(name = "lastname", nullable = false)
     private String lastname;
 
-    @Column(name = "email")
-    private String email;
 
     public User() {
 
@@ -28,13 +26,12 @@ public class User {
     public User(User user) {
         name = user.getName();
         lastname = user.getLastname();
-        email = user.email;
+
     }
 
     public User(String name, String lastName, String email) {
         this.name = name;
         this.lastname = lastName;
-        this.email = email;
     }
 
 
@@ -46,9 +43,6 @@ public class User {
         this.lastname = lastname;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
 
     public int getId() {
         return id;
@@ -66,9 +60,6 @@ public class User {
         return lastname;
     }
 
-    public String getEmail() {
-        return email;
-    }
 
     @Override
     public String toString() {

@@ -19,13 +19,13 @@ public class UserController {
     private final UserService service;
     public UserController( UserService service){
         this.service=service;
-        addUsers();
+     //   addUsers();
     }
-    private void addUsers(){
-        service.save(new User("Ruby","Jefferson","contutitutionmf@111.prez"));
-        service.save(new User("Abraham","Peepoo","theatrelova@69.am"));
-        service.save(new User("Ogre","Magi","missisluck@dumbo.com"));
-    }
+//    private void addUsers(){
+//        service.save(new User("Ruby","Jefferson","contutitutionmf@111.prez"));
+//        service.save(new User("Abraham","Peepoo","theatrelova@69.am"));
+//        service.save(new User("Ogre","Magi","missisluck@dumbo.com"));
+//    }
 
 
     @GetMapping("/get")

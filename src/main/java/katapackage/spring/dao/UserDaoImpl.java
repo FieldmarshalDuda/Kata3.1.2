@@ -20,12 +20,6 @@ public class UserDaoImpl implements UserDao {
         this.entityManager = entityManager;
     }
 
-    public  void addUsers(){
-        save(new User("Ruby","Jefferson","contutitutionmf@111.prez"));
-        save(new User("Abraham","Peepoo","theatrelova@69.am"));
-        save(new User("Ogre","Magi","missisluck@dumbo.com"));
-    }
-
     public List<User> getUserList() {
         return entityManager.createQuery("From User", User.class).getResultList();
     }
@@ -36,12 +30,10 @@ public class UserDaoImpl implements UserDao {
     }
 
     public void save(User user) {
-        entityManager.joinTransaction();
         entityManager.persist(user);
     }
 
     public void update(int id, User user) {
-        entityManager.joinTransaction();
         User UpdUser = show(id);
         UpdUser.setName(user.getName());
         UpdUser.setLastname(user.getLastname());
@@ -49,7 +41,6 @@ public class UserDaoImpl implements UserDao {
     }
 
     public void delete(int id) {
-        entityManager.joinTransaction();
         try {
             entityManager.remove(show(id));
         } catch (Exception e) {
